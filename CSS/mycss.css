@@ -1,3 +1,6 @@
+
+
+
 body{
     width: 400px;
     height: 550px;
@@ -6,14 +9,13 @@ body{
 }
 
 main{
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-bottom: 120px;
-    margin-left: 10px;
+    border:solid;
 }
 
 section{
-
+border:solid 1px black;
+    min-height: 100px;
+    min-width:200px;
 }
 
 #what{
@@ -22,27 +24,18 @@ section{
     color: dimgray;
 }
 
-#what>input{
-    display: block;
-
-}
-
-#where{
-
-
-}
-
-#who{
-
-
-}
-
 nav{
     height: 200px;
-    border-top: solid thin dimgray;
+    border: solid thin dimgray;
     text-transform: uppercase;
     padding: 10px 0px;
-    margin: 20px;
+
+}
+#where{
+    background-color: blue;
+}
+#who{
+    background-color: red;
 }
 
 nav>button{
