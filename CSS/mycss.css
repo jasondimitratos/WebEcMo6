@@ -1,0 +1,58 @@
+body{
+    width: 400px;
+    height: 550px;
+    margin: auto;
+    align-content: center;
+}
+
+main{
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 120px;
+    margin-left: 10px;
+}
+
+section{
+
+}
+
+#what{
+    font-family: Arial;
+    font-size: 17px;
+    color: dimgray;
+}
+
+#what>input{
+    display: block;
+
+}
+
+#where{
+
+
+}
+
+#who{
+
+
+}
+
+nav{
+    height: 200px;
+    border-top: solid thin dimgray;
+    text-transform: uppercase;
+    padding: 10px 0px;
+    margin: 20px;
+}
+
+nav>button{
+
+    padding: 10px;
+    font-family: helvetica;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    display: inline-block;
+    outline-color: black;
+}
