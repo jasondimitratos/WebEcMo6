@@ -2,19 +2,23 @@
 
 
 body{
-    width: 400px;
+    width: auto;
+    max-width: 500px;
     height: 550px;
-    margin: auto;
+    margin:0px auto;
     align-content: center;
 }
 
 main{
-    border:solid;
+
+    /*width: 600px;*/
+    margin:5px auto ;
+    text-align: center;
 }
 
 section{
-border:solid 1px black;
-    min-height: 100px;
+
+    min-height: 400px;
     min-width:200px;
 }
 
@@ -25,8 +29,10 @@ border:solid 1px black;
 }
 
 nav{
-    height: 200px;
-    border: solid thin dimgray;
+    height: 300px;
+    width: auto;
+    margin:0px auto;
+    text-align: center;
     text-transform: uppercase;
     padding: 10px 0px;
 
@@ -40,6 +46,7 @@ nav{
 
 nav>button{
 
+    margin: 10px;
     padding: 10px;
     font-family: helvetica;
     font-size: 16px;
@@ -47,5 +54,6 @@ nav>button{
     text-decoration: none;
     background-color: black;
     display: inline-block;
-    outline-color: black;
+    border-radius: 20px;
+
 }
