@@ -1,5 +1,4 @@
 
-function getMap(){}
 $('document').ready(function () {
     $('#where').hide();
     $('#who').hide();
@@ -22,7 +21,7 @@ $('document').ready(function () {
         var map= new google.maps.Map(document.getElementById('where'),mapOptions);
     }
     function failuere(){
-        alert("did not work")
+        alert("did not work");
     }
 
     /**Dies ist ein Eventhandler für den footer die im Main die entsprechende Section anzeigt*/
