@@ -39,17 +39,26 @@ function showmap(){
 
     service.nearbySearch(placeSearchOptions,function(results,status){
         if(status === google.maps.places.PlacesServiceStatus.OK ) {
-            console.log("vor schlaufe");
+            console.log("for schlaufe");
 
             for(var i=0;i<results.length;i++){
 
                 console.log(results[i]);
-                var p = $('<p id="restaurant">  </p>').text((i+1)+". "+results[i].name + " ");
-
-                $('#who').append(p);
-
-
                 createMarker(results[i], map);
+
+                var tr = $('<tr> </tr>');
+                var td1 = $('<td> </td>').text((i+1));
+                var td2 = $('<td></td>').text(results[i].name);
+                var td3 = $('<td></td>').text(results[i].icon);
+                tr.append(td1);
+                tr.append(td2);
+                tr.append(td3);
+
+               /* var p = $('<p id="restaurant">  </p>').text((i+1)+". "+results[i].name + " " + results[i].rating);
+                p +=
+                */
+
+                $('#who').append(tr);
 
             }
         }
