@@ -9,6 +9,7 @@ function showmap(){
         return map;
     }
 
+
     function setCurrentPosition() {
         window.navigator.geolocation.getCurrentPosition(
             function(position){
@@ -39,8 +40,15 @@ function showmap(){
     service.nearbySearch(placeSearchOptions,function(results,status){
         if(status === google.maps.places.PlacesServiceStatus.OK ) {
             console.log("vor schlaufe");
+
             for(var i=0;i<results.length;i++){
+
                 console.log(results[i]);
+                var p = $('<p id="restaurant">  </p>').text((i+1)+". "+results[i].name + " ");
+
+                $('#who').append(p);
+
+
                 createMarker(results[i], map);
 
             }
