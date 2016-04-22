@@ -2,7 +2,7 @@
 function showmap(){
     //Ladet die Karte und die Position in bereich where
     var x= window.navigator.geolocation;
-    x.getCurrentPosition(success,failuere);
+    x.getCurrentPosition(success,failure);
     function success(position){
         var mylat= position.coords.latitude;
         var mylong= position.coords.longitude;
@@ -11,7 +11,7 @@ function showmap(){
         var mapOptions={center: here,zoom:16};
         var map= new google.maps.Map(document.getElementById('where'),mapOptions);
     }
-    function failuere(){
+    function failure(){
         alert("did not work");
     }
 
