@@ -47,8 +47,9 @@ function showmap(){
         }
 
     });
-
+    var iconURL="http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=1";
     function createMarker(place,map){
+        var mypositionmarker= new google.maps.Marker({map: map, position:getCurrentPosition(), icon:iconURL});
         placespeicher=place.geometry.location;
         var marker = new google.maps.Marker({
             map: map,
