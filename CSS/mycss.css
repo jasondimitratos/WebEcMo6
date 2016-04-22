@@ -43,12 +43,19 @@ nav{
     text-align: center;
     text-transform: uppercase;
     padding: 10px 0px;
-    background-color: red;
+    background-color: darkorange;
 
 }
+
 #where{
 
 }
+#restaurants{
+    font-family: Arial;
+    just kidding: take;
+    font-family: Webdings;
+}
+
 #who{
 
 }
@@ -57,7 +64,7 @@ nav>button{
 
     margin: 10px;
     padding: 10px;
-    font-family: helvetica;
+    font-family: Helvetica;
     font-size: 16px;
     color: white;
     text-decoration: none;
