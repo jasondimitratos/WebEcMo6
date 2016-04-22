@@ -1,23 +1,61 @@
 
 function showmap(){
-    //Ladet die Karte und die Position in bereich where
-    var x= window.navigator.geolocation;
-    x.getCurrentPosition(success,failure);
-    function success(position){
-        var mylat= position.coords.latitude;
-        var mylong= position.coords.longitude;
-        console.log(mylat+","+mylong);
-        var here= new google.maps.LatLng(mylat,mylong);
-        var mapOptions={center: here,zoom:16};
-        var map= new google.maps.Map(document.getElementById('where'),mapOptions);
-    }
-    function failure(){
-        alert("did not work");
+
+    function initializeMap() {
+        setCurrentPosition();
+        var mapOptions = {center: getCurrentPosition(), zoom: 15};
+        var map = new google.maps.Map(document.getElementById('where'), mapOptions);
+
+        return map;
     }
 
-    var placeSearchOptions={location:here,radius:300,types:['restaurant'],keyword:'Pizza'}
+    function setCurrentPosition() {
+        window.navigator.geolocation.getCurrentPosition(
+            function(position){
+                var pos = JSON.stringify({
+                    lat:position.coords.latitude,
+                    lng:position.coords.longitude
+                });
+
+                window.localStorage.setItem("currentPosition", pos);
+            },function() {
+                handleNoGeolocation(true);
+            });
+    }
+
+
+    function getCurrentPosition() {
+        return JSON.parse(window.localStorage.getItem("currentPosition"));
+    }
+
+    var map = initializeMap();
+
+    // Places abfragen
+    var placeSearchOptions={location:getCurrentPosition(),radius:1000,types:['restaurant'],keyword:'pizza'};
+    console.log(placeSearchOptions);
     var service= new google.maps.places.PlacesService(map);
-    service.nearbySearch(placeSearchOptions,function(results,status){});
+    console.log(service);
+
+    service.nearbySearch(placeSearchOptions,function(results,status){
+        if(status === google.maps.places.PlacesServiceStatus.OK ) {
+            console.log("vor schlaufe");
+            for(var i=0;i<results.length;i++){
+                console.log(results[i]);
+                createMarker(results[i], map);
+
+            }
+        }
+
+    });
+
+    function createMarker(place,map){
+        placespeicher=place.geometry.location;
+        var marker = new google.maps.Marker({
+            map: map,
+            position: place.geometry.location
+        });
+    }
+
 }
 
 
