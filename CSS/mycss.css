@@ -1,45 +1,48 @@
 
-
-
-body{
+body {
     width: auto;
     max-width: 800px;
     max-height: 3250px;
-    margin:0px auto;
+    margin: 0px auto;
     align-content: center;
     padding-top: 20px;
 }
 
-main{
+main {
 
-
-    margin:0px auto ;
+    margin: 0px auto;
     height: auto;
     text-align: center;
 
 }
 
-section{
+section {
 
     min-height: 400px;
-    min-width:200px;
+    min-width: 200px;
 
 }
 
-#what{
+#what {
     font-family: Arial;
     font-size: 17px;
     color: dimgray;
 }
-#what>button{
+
+form {
+    padding-top: 80px;
+}
+
+#what > button {
     padding: 10px;
+    margin-top: 20px;
     border-radius: 10px;
 }
 
-nav{
+nav {
     height: auto;
     width: auto;
-    margin:0px auto;
+    margin: 0px auto;
     text-align: center;
     text-transform: uppercase;
     padding: 10px 0px;
@@ -47,20 +50,28 @@ nav{
 
 }
 
-#where{
+#where {
 
 }
-#restaurants{
+
+#restaurants {
     font-family: Arial;
-    just kidding: take;
     font-family: Webdings;
-}
-
-#who{
 
 }
 
-nav>button{
+tr {
+    display: block;
+    margin-bottom: 15px;
+
+}
+
+td {
+    display: inline;
+    width: inherit;
+}
+
+nav > button {
 
     margin: 10px;
     padding: 10px;
