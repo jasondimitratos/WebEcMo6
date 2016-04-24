@@ -1,4 +1,4 @@
-function showmap(whatfood) {
+function showmap(whatfood,radius) {
 
     /**
      * Diese funktions initialisiert eine map
@@ -66,7 +66,7 @@ function showmap(whatfood) {
      * Hier wird places nach dem Keyword abgefragt und die WHO liste erstellt
      * @type {{location: *, radius: number, types: string[], keyword: *}}
      */
-    var placeSearchOptions = {location: getCurrentPosition(), radius: 1000, types: ['restaurant'], keyword: whatfood};
+    var placeSearchOptions = {location: getCurrentPosition(), radius: radius, types: ['restaurant'], keyword: whatfood};
     var service = new google.maps.places.PlacesService(map);
 
     $('#who').empty();//die vorherige elemente aus who löschen
@@ -108,7 +108,9 @@ $('document').ready(function () {
         $('#where').show();
         //herausfinden welcher radiobutton aktive ist
         var presedradiobutton = $('#what').find('form').children('input').filter($('input:checked')).val();
-        showmap(presedradiobutton);
+        var radius=$('#slider1').val();
+        console.log(radius);
+        showmap(presedradiobutton,radius);
     });
 
 
