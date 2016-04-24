@@ -50,7 +50,7 @@ function showmap(whatfood,radius) {
             icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=" + (i + 1) + "|FE6256|FFFFFF"
         });
         var infowindow = new google.maps.InfoWindow({
-            content: '<h4>' + i + '. ' + place.name + '</h4>'
+            content: '<h4>' + (i+1) + '. ' + place.name + '</h4>'
         });
 
         marker.addListener('click', function () {
