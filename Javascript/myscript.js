@@ -1,5 +1,5 @@
 
-function showmap(){
+function showmap(whatfood){
 
     function initializeMap() {
         setCurrentPosition();
@@ -32,7 +32,7 @@ function showmap(){
     var map = initializeMap();
 
     // Places abfragen
-    var placeSearchOptions={location:getCurrentPosition(),radius:1000,types:['restaurant'],keyword:'pizza'};
+    var placeSearchOptions={location:getCurrentPosition(),radius:100000,types:['restaurant'],keyword:whatfood};
     console.log(placeSearchOptions);
     var service= new google.maps.places.PlacesService(map);
     console.log(service);
@@ -82,10 +82,15 @@ $('document').ready(function () {
     $('#who').hide();
     $('#what').find('button').on('click', function (event) {
         event.preventDefault();
-
         $('#what').hide();
         $('#where').show();
-        showmap();
+        //herausfinden welcher radiobutton aktive ist
+        var presedradiobutton=$('#what').find('form').children('input').filter($('input:checked')).val();
+        console.log('jomama');
+
+        showmap(presedradiobutton);
+
+
     });
 
 
