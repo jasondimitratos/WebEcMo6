@@ -133,4 +133,9 @@ $('document').ready(function () {
         });
     });
 
+    $('#slider1').on('click',function(event){
+        event.preventDefault();
+        $('#inputfield').val($('#slider1').val());
+    });
+
 });
