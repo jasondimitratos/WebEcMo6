@@ -47,7 +47,7 @@ function showmap(whatfood,radius) {
         var marker = new google.maps.Marker({
             map: map,
             position: place.geometry.location,
-            icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=" + (i + 1) + "|FE6256|000000"
+            icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=" + (i + 1) + "|FE6256|FFFFFF"
         });
         var infowindow = new google.maps.InfoWindow({
             content: '<h4>' + i + '. ' + place.name + '</h4>'
@@ -72,13 +72,9 @@ function showmap(whatfood,radius) {
     $('#who').empty();//die vorherige elemente aus who löschen
     service.nearbySearch(placeSearchOptions, function (results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
-            console.log("for schlaufe");
-
             for (var i = 0; i < results.length; i++) {
-
-                console.log(results[i]);
                 createMarker(results[i], map, i);
-
+                //hier wird die who-liste erstellt
                 var tr = $('<tr id="restaurants"> </tr>');
                 var td1 = $('<td> </td>').text((i + 1) + ". ");
                 var td2 = $('<td></td>').text(results[i].name+", ");
@@ -87,7 +83,6 @@ function showmap(whatfood,radius) {
                 tr.append(td2);
                 tr.append(td3);
                 $('#who').append(tr);
-
             }
         }
 
