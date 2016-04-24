@@ -78,7 +78,7 @@ function showmap(whatfood) {
 
                 var tr = $('<tr id="restaurants"> </tr>');
                 var td1 = $('<td> </td>').text((i + 1) + ". ");
-                var td2 = $('<td></td>').text(results[i].name);
+                var td2 = $('<td></td>').text(results[i].name+", ");
                 var td3 = $('<td></td>').text(results[i].vicinity);
                 tr.append(td1);
                 tr.append(td2);
