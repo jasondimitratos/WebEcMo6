@@ -1,4 +1,5 @@
 function showmap(whatfood) {
+
     /**
      * Diese funktions initialisiert eine map
      * @returns {google.maps.Map}
@@ -67,6 +68,8 @@ function showmap(whatfood) {
      */
     var placeSearchOptions = {location: getCurrentPosition(), radius: 1000, types: ['restaurant'], keyword: whatfood};
     var service = new google.maps.places.PlacesService(map);
+
+    $('#who').empty();//die vorherige elemente aus who löschen
     service.nearbySearch(placeSearchOptions, function (results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
             console.log("for schlaufe");
